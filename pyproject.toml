@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wellfield"
+version = "0.1.0"
+description = "Pumping-test analysis, wellhead protection zones and injection-well screening for confined aquifers"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Parisa Abbasalizadehrezaei"}]
+dependencies = ["numpy", "scipy", "matplotlib"]
+
+[project.scripts]
+wellfield = "wellfield.cli:main"
+
+[tool.setuptools]
+packages = ["wellfield"]

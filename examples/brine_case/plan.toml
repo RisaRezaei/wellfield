@@ -1,0 +1,40 @@
+# Brine well siting, fictional coastal site: the plant's plan
+title = "Plant's plan: brine well 200 m up-gradient"
+output = "out_plan"
+
+[aquifer]
+thickness = 20.0          # m
+porosity = 0.25           # effective porosity
+# transmissivity = 600    # m2/day; leave out to estimate it from the pumping test
+
+[pumping_test]
+file = "pumping_test.csv" # columns: time, drawdown (m)
+time_unit = "minutes"
+rate = 1500.0             # m3/day
+distance = 40.0           # m from the pumping well to the observation well
+
+[regional_flow]
+file = "observation_wells.csv"   # columns: name, x, y, head (m)
+
+[wells]
+file = "wells_plan.csv"          # columns: name, x, y, rate (m3/day; + extraction, - injection)
+
+[protection_zones]
+wells = ["Town well"]
+days = [50, 365]
+
+[[connection]]
+source = "Brine well"
+sink = "Town well"
+dispersivity = 20.0              # m
+source_concentration = 70.0      # g/L
+background = 0.5                 # g/L
+limit = 1.0                      # g/L
+unit = "g/L"
+
+[siting]
+sink = "Town well"
+injection_rate = 1500.0          # m3/day
+directions = [0, 90, 180]        # degrees from the flow direction: 0 down, 90 cross, 180 up-gradient
+max_distance = 1500.0
+step = 50.0
