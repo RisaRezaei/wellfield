@@ -52,3 +52,7 @@ Confined, homogeneous, isotropic aquifer; steady regional flow; fully penetratin
 ## Author
 
 Parisa Abbasalizadehrezaei · [risarezaei.github.io](https://risarezaei.github.io) · MIT licence
+
+## Contributing
+
+Bug reports, questions and pull requests are welcome through the Issues and Pull requests tabs.
